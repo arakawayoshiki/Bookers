@@ -1,7 +1,7 @@
  <% if flash[:notice] %>
-    <p id="notice">
-        <%= flash[notice] %>
-    </p>
+    <div class="flash">
+        <%= flash[:notice] %>
+    </div>
  <% end %>    
 <h1>Books</h1>
 <% @books.each do |book| %>
