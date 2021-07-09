@@ -25,8 +25,9 @@
               <td><%= link_to "Destroy", book_path(book), method: :delete, "data-confirm" => "Are you sure?" %></td>
           </tr>
       </tbody>
+    <% end %>
     </table>
- <% end %>
+
 
  <h2>New book</h2>
 
@@ -42,12 +43,12 @@
 
  <%= form_with model:@book, local: true do |f| %>
 
-  <h6>Title</h6>
+  <div>Title</div>
   <%= f.text_field :title %>
 
-  <h6>Body</h6>
+  <div>Body</div>
   <%= f.text_area :body %>
 
-  <h6><%= f.submit 'Create Book' %></h6>
+  <div><%= f.submit 'Create Book' %></div>
  <% end %>
 </body>
