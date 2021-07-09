@@ -3,9 +3,10 @@
         <%= flash[:notice] %>
     </div>
  <% end %>
-<h1>Books</h1>
-<% @books.each do |book| %>
-  <table>
+<body>
+ <h1>Books</h1>
+
+    <table>
       <thead>
           <tr>
               <th>Title</th>
@@ -13,7 +14,7 @@
               <th></th>
           </tr>
       </thead>
-
+    <% @books.each do |book| %>
       <tbody>
           <tr>
               <td><%= book.title %></td>
@@ -24,10 +25,10 @@
               <td><%= link_to "Destroy", book_path(book), method: :delete, "data-confirm" => "Are you sure?" %></td>
           </tr>
       </tbody>
-  </table>
-<% end %>
+    </table>
+ <% end %>
 
-<h2>New book</h2>
+ <h2>New book</h2>
 
  <% if @book.errors.any? %>
 
@@ -39,7 +40,7 @@
   </ul>
  <% end %>
 
-<%= form_with model:@book, local: true do |f| %>
+ <%= form_with model:@book, local: true do |f| %>
 
   <h6>Title</h6>
   <%= f.text_field :title %>
@@ -47,5 +48,6 @@
   <h6>Body</h6>
   <%= f.text_area :body %>
 
-  <%= f.submit 'Create Book' %>
-<% end %>
+  <h6><%= f.submit 'Create Book' %></h6>
+ <% end %>
+</body>

@@ -11,6 +11,7 @@
          <% end %>
       </ul>
    <% end %>
+ <body>
    <h4>Title</h4>
    <%= f.text_field :title %>
    <h4>Body</h4>
@@ -22,5 +23,5 @@
          <%= link_to "show", book_path(@book) %>
          <%= link_to "back", books_path(@book) %>
      </tr>
-
+ </body>
 <% end %>
